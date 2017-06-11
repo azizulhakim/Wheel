@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Ionic Menu Starter</h3>
+
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+  </p>
+
+  <ion-list>
+    <ion-item>
+      <ion-label >Select Make</ion-label>
+      <ion-select #C [(ngModel)]="make" interface="popover" (ionChange)="makeSelect(C.value)">
+        <ion-option *ngFor="let p of makes" value={{p.value}}>{{p.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Select Model</ion-label>
+      <ion-select [(ngModel)]="model" interface="popover" (ionChange)="modelSelect()">
+        <ion-option *ngFor="let p of models" value={{p.name}}>{{p.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label fixed>Near Zip Code</ion-label>
+    <ion-input type="text" value={{zipcode}}></ion-input>
+  </ion-item>
+
+
+  <ion-label> Show me cars with </ion-label>
+  <ion-item>
+    <ion-label>No Accidents/ Damage Reported</ion-label>
+    <ion-checkbox color="blue" checked="{{ noAccident }}"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>CARFAX 1-Owner</ion-label>
+    <ion-checkbox color="blue" checked="{{ oneOwner }}"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Personal Use</ion-label>
+    <ion-checkbox color="blue" checked="{{ personalUse }}"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Service History</ion-label>
+    <ion-checkbox color="blue" checked="{{ serviceRecords }}"></ion-checkbox>
+  </ion-item>
+
+
+
+  <div padding>
+    <!-- <button ion-button color="primary" block>Sign In</button> -->
+
+    <button ion-button color="default" block> Search </button>
+  </div>
+
+  <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
+</ion-content>
