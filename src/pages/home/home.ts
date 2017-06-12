@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HTTP } from '@ionic-native/http';
 import { AlertController } from 'ionic-angular';
+import { CarList } from '../carlist/carlist'
 
 
 @Component({
@@ -90,5 +91,17 @@ export class HomePage {
 
   modelSelect() {
     console.log(this.model);
+  }
+
+  onSearchClick() {
+    this.navCtrl.push(CarList, {
+      make: this.make,
+      model: this.model,
+      zipcode: this.zipcode,
+      noAccident: this.noAccident,
+      oneOwner: this.oneOwner,
+      personalUse: this.personalUse,
+      serviceRecords: this.serviceRecords
+    });
   }
 }
