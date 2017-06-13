@@ -59,7 +59,7 @@ export class CarList {
         for (var i=0; i<carData.listings.length; i++) {
           self.jsonAll = "" + carData.listings[i].images.medium[0];
           self.cars.push({
-            year: '2015',
+            year: carData.listings[i].year,
             make: carData.listings[i].make,
             model: carData.listings[i].model,
             trim: carData.listings[i].trim,
@@ -67,7 +67,7 @@ export class CarList {
             mileage: carData.listings[i].mileage,
             listPrice: carData.listings[i].listPrice,
             currentPrice: carData.listings[i].currentPrice,
-            image: carData.listings[i].images.medium[0],
+            image: carData.listings[i].images.small[0],
             accidentHistory: carData.listings[i].accidentHistory,
             serviceHistory: carData.listings[i].serviceHistory,
             vehicleUseHistory: carData.listings[i].vehicleUseHistory,
